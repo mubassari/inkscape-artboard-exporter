@@ -1,2 +1,2 @@
-# inkscape-artboard-exporter
+# Inkscape Artboard Exporter
 Export Layer as Artboard in Inkscape
