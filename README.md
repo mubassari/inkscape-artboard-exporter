@@ -2,7 +2,7 @@
 Export Layer as Artboard in Inkscape ```v0.0.1``` Create by: [Muhammad Mauli Mubassari](https://mubassari.github.io/)
 
 ## How To Install
-1. Download this extension [here](https://github.com/mubassari/inkscape-artboard-exporter/releases)
+1. Download [this extension](https://github.com/mubassari/inkscape-artboard-exporter/releases)
 2. Move all file to Inkscape extension folder
 
 ## How To Use
