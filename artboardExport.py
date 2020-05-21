@@ -56,6 +56,8 @@ class ExportArtboards(inkex.EffectExtension):
             else:
                 self.exportNode(node, dpi, num)
 
+        return self.document
+
     def getLayer(self, layerName):
         hide = False
         layer = None
