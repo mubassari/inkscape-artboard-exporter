@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+  <name>Artboard Exporter (v0.0.1)</name>
+  <id>org.inkscape.output.artboard</id>
+  <param name="tab" type="notebook">
+    <page name="export_tab" gui-text="Options">
+      <vbox>
+        <param name="title" type="description" appearance="header">Artboard Layer</param>
+        <hbox>
+        <param name="layer" type="string" gui-text="">Artboard</param>
+        <label indent="7">DPI</label>
+        <param name="dpi" type="int" min="1" max="1000" gui-text=" ">96</param>
+        </hbox>
+      </vbox>
+        <spacer/>
+      <vbox>
+        <param name="title" type="description" appearance="header">Resizing Export</param>
+        <hbox>
+          <param name="resize" type="bool" gui-text="Resize Export">false</param>
+          <param name="sizes" type="string" gui-text="" indent="7">1</param>
+        </hbox>
+      </vbox>
+        <spacer/>
+      <vbox>
+        <param name="title" type="description" appearance="header">Color and Transparency</param>
+        <hbox>
+          <param name="bg" type="bool" gui-text="Custom Background Color">false</param>
+          <param name="color" type="color" appearance="colorbutton" gui-text="" indent="12"></param>
+        </hbox>
+        <hbox>
+          <label indent="8">Transparency</label>
+          <param name="opacity" type="float" min="0" max="100" gui-text="  " indent="9">100.0</param>
+        </hbox>
+      </vbox>
+        <spacer/>
+      <vbox>
+        <param name="title" type="description" appearance="header">Directory and Naming</param>
+        <param name="directory" type="path" mode="folder" gui-text="Directory"/>
+        <param name="filename" type="string" gui-text="Filename">{label} {dpi} {size}</param>
+        <param name="overwrite" type="bool" gui-text="Overwrite existing exports">true</param>
+      </vbox>
+    </page>
+    <page name="about_tab" gui-text="Guide">
+      <vbox>
+        <param name="title" type="description" appearance="header">HOW TO USE</param>
+        <label>1. Make a dedicated layer and place it in the bottom of object list.</label>
+        <label>2. Make a Rectangle object inside that layer as Artboard item.</label>
+        <label>3. Open Document Properties, on Page Tab, uncheck "Show Page Border" and make "Background Color" to dark color (my preference is dark greyish black)</label>
+        <spacer/>
+        <param name="title" type="description" appearance="header">ARTBOARD LAYER</param>
+        <label>Input a layer that used as Artboard</label>
+        <spacer/>
+        <param name="title" type="description" appearance="header">RESIZE EXPORT</param>
+        <label>Resize exported object by multiplying size with input separated by comma</label>
+        <spacer/>
+        <param name="title" type="description" appearance="header">COLOR AND TRANSPARENCY</param>
+        <label>Set a color and level of transparency for custom background.</label>
+        <label>Make sure your Artboard Layer is hidden or it's Opacity less than 100%.</label>
+        <spacer/>
+        <param name="title" type="description" appearance="header">DIRECTORY AND NAMING</param>
+        <param name="title" type="description" appearance="header">Filename Format</param>
+        <hbox>
+          <vbox>
+            <label>{label}</label>
+            <label>{dpi}</label>
+            <label>{size}</label>
+          </vbox>
+          <vbox>
+            <label>Get Label Name</label>
+            <label>Get DPI. Example: 96DPI</label>
+            <label>Get Size (if 'resize' is checked). Example: x2</label>
+          </vbox>
+        </hbox>
+      </vbox>
+    </page>
+    <page name="about_tab" gui-text="About">
+      <vbox>
+        <param name="title" type="description" appearance="header">ARTBOARD EXPORTER</param>
+        <separator/>
+        <label>v0.0.1</label>
+        <label>Create by: Muhammad Mauli Mubassari</label>
+        <label appearance="url">https://mubassari.github.io/</label>
+      </vbox>
+    </page>
+  </param>
+
+  <effect needs-live-preview="false">
+    <object-type>all</object-type>
+    <effects-menu>
+      <submenu name="Export"/>
+    </effects-menu>
+  </effect>
+
+  <script>
+    <command location="inx" interpreter="python">artboardExport.py</command>
+  </script>
+</inkscape-extension>
